@@ -40,24 +40,21 @@ function getVariablesTerminales(data){
 
   getLines.forEach(line => {
     line = line.split(/:/);
-    
     variable = line[0]
+
     if (!arrayVariables.includes(variable)) {
       arrayVariables.push(variable)
       printVariables(arrayVariables)
     } 
     
     terminal = line[1] 
+    terminal = terminal.replace(/'/g, "")
+    
     if (!arrayTerminales.includes(terminal)) {
       arrayTerminales.push(terminal)        
       printTerminales(arrayTerminales)
     }
-    
-  
-  }) 
-
-  
-  
+  })   
 }
 
 function printVariables(arrayVariables){
@@ -72,10 +69,6 @@ function printVariables(arrayVariables){
 
   $tbody1.appendChild($tr)
   $tr.appendChild($td)
- 
-  //arrayVariables = [];
-  console.log(arrayVariables);
-  //console.log(arrayTerminales);  
 }
 
 function printTerminales(arrayTerminales){
