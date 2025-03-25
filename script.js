@@ -20,6 +20,9 @@ $box2.appendChild($table2)
 $table1.appendChild($tbody1);
 $table2.appendChild($tbody2);
 
+let arrayVariables = [];
+let arrayTerminales = [];
+
 document.addEventListener("keydown", function(event) {
   //console.log(event.key)
   if (event.key === "F5") {
@@ -30,22 +33,31 @@ document.addEventListener("keydown", function(event) {
 });
 
 function getVariablesTerminales(data){
-  let arrayVariables = [];
-  let arrayTerminales = [];
+ 
 
   getLines = data.value
   getLines = getLines.split(/\n/)
 
   getLines.forEach(line => {
     line = line.split(/:/);
+    
     variable = line[0]
-    arrayVariables.push(variable)
+    if (!arrayVariables.includes(variable)) {
+      arrayVariables.push(variable)
+      printVariables(arrayVariables)
+    } 
+    
     terminal = line[1] 
-    arrayTerminales.push(terminal)          
+    if (!arrayTerminales.includes(terminal)) {
+      arrayTerminales.push(terminal)        
+      printTerminales(arrayTerminales)
+    }
+    
+  
   }) 
 
-  printVariables(arrayVariables)
-  printTerminales(arrayTerminales)
+  
+  
 }
 
 function printVariables(arrayVariables){
@@ -61,7 +73,8 @@ function printVariables(arrayVariables){
   $tbody1.appendChild($tr)
   $tr.appendChild($td)
  
-  //console.log(arrayVariables);
+  //arrayVariables = [];
+  console.log(arrayVariables);
   //console.log(arrayTerminales);  
 }
 
