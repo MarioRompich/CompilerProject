@@ -47,12 +47,18 @@ function getVariablesTerminales(data){
       printVariables(arrayVariables)
     } 
     
-    terminal = line[1] 
-    terminal = terminal.replace(/'/g, "")
-    
-    if (!arrayTerminales.includes(terminal)) {
-      arrayTerminales.push(terminal)        
-      printTerminales(arrayTerminales)
+    terminales = line[1] 
+    terminales = terminales.replace(/'/g, "")
+    terminales = terminales.split("")
+    console.log(terminales)
+
+
+     for (let index = 0; index < terminales.length; index++) {
+      terminal = terminales[index];
+      if (!arrayTerminales.includes(terminal) && terminal != "|") {
+        arrayTerminales.push(terminal)        
+        printTerminales(arrayTerminales)
+      }
     }
   })   
 }
