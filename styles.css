@@ -8,8 +8,9 @@
 
 body {
   font-family: 'Noto Sans';
-  background-color: #fff ;
+  background-color: #121f3d ;
   padding: 20px;
+
 }
 
 #area {
@@ -44,6 +45,19 @@ h3 {
   font-weight: 400;
 }
 
+h2 {
+  background-color: #121f3d;
+  color:white;
+  border-bottom: 3px solid #98ca3f;
+  border-top: 3px solid rgb(21, 143, 137);
+  border-left: 3px solid lightseagreen;
+  border-right: 3px solid lightseagreen;
+  font-weight:bold;
+  font-size: 20px;
+  /*-webkit-text-stroke: 0.001px #fff;*/
+  padding: 4px;
+}
+
 .title{
     text-align: center;
 }
@@ -67,15 +81,15 @@ h3 {
 #box1{
   display: flex;
   border: 2px solid darkslategrey;
-  height: 89.5vh;
-  width: 50vh;
+  height: 78vh;
+  width: 30vh;
 }
 
 #box2{
   display: flex;
   border: 2px solid darkslategrey;
-  height: 89.5vh;
-  width: 50vh;
+  height: 78vh;
+  width: 30vh;
 }
 
 textarea{
